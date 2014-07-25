@@ -2,10 +2,10 @@
 Autor: Erick Hernandez    Carné: 13197
 Seccion: 21
 
-Nombre de archivo: Quick.java 
-Descripcion: clase Quick que 
+Nombre de archivo: Merge.java 
+Descripcion: clase Merge que 
 */
-public class Quick{
+public class Merge{
 
     public static void Sort (Comparable[] list){
       

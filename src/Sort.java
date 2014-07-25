@@ -7,4 +7,6 @@ Descripcion: clase Sort que
 */
 public interface Sort<E>{
 
+    public void Sort(Comparable[] list);
+    
 }
