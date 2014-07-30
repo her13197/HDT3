@@ -12,18 +12,21 @@ public class Main {
     
     public static void main(String[] args) {
         Numeros lista=new Numeros();
-        int cant=Integer.parseInt(JOptionPane.showInputDialog("¿Cuántos números desea generar?"));
+        
+        /*Para generar numeros aleatorios y ordenarlos*/
+        int cant=2000;
         String[] list = new String[cant];
+        lista.limpiar();
         lista.llenar(cant);
         list=lista.leerDatos(cant);
-        Insertion ordenar=new Insertion();
-        
-        String[] listOrd=new String[cant];
+        Sort ordenar=new QuickSort();
         ordenar.Sort(list);
-        Numeros ordenados=new Numeros();
-        for(int i=0;i<cant;i++){
-            ordenados.escribeDatos(Integer.parseInt(listOrd[i]));
-        }
+        
+        /*Para ordenar una lista ya definida */
+       // String[] listOrd=new String[cant];
+       // listOrd=lista.leerDatos(cant);
+       // ordenar.Sort(listOrd);
+        
     }
 
 }

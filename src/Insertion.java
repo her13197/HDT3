@@ -4,14 +4,14 @@
 //  Demonstrates the selection sort and insertion sort algorithms.
 //********************************************************************
 
-public class Insertion
+public class Insertion implements Sort
 {
    //-----------------------------------------------------------------
    //  Sorts the specified array of objects using the insertion
    //  sort algorithm.
    //-----------------------------------------------------------------
     
-   public void Sort (Comparable[] list)
+   public void Sort(Comparable[] list)
    {
       for (int index = 1; index < list.length; index++)
       {

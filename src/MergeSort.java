@@ -7,7 +7,7 @@
  *
  * @author Bicimotoca
  */
-public class MergeSort{
+public class MergeSort implements Sort{
     
     /**
      * MÃ©todo que permite la utilizaciÃ³n de merge sort.
@@ -15,7 +15,7 @@ public class MergeSort{
      * post: El arreglo se ordena.
      * @param list El arreglo que se quiere ordenar.
      */
-    public void mergeSort(Comparable [] list){
+    public void Sort(Comparable [] list){
         int largo = list.length;
         sort(0, largo-1, list);        
     }

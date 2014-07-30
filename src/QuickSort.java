@@ -7,7 +7,7 @@
  *
  * @author Bicimotoca
  */
-public class QuickSort {
+public class QuickSort implements Sort{
     
     /**
      * Método que permite la utilización de quick sort.
@@ -15,7 +15,7 @@ public class QuickSort {
      * post: El arreglo se ordena.
      * @param list El arreglo que se quiere ordenar.
      */
-    public void quickSort(Comparable[] list){
+    public void Sort(Comparable[] list){
         quickSort(list,0,list.length-1);
     }
     

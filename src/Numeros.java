@@ -20,10 +20,7 @@ public class Numeros<E>{
 				directorio.mkdirs();
 			}
 			try{
-                            if(archivo.exists()){
-                                archivo.delete();
-                                archivo.createNewFile();
-                            }else if(!archivo.exists()){
+                            if(!archivo.exists()){
                                 archivo.createNewFile();
                             }
 			}
@@ -87,10 +84,11 @@ public class Numeros<E>{
 			}
 		}
     
-    public void fin(){
+    public void limpiar(){
         try{
             if(archivo.exists()){
                 archivo.delete();
+                archivo.createNewFile();
             }
 	}
             catch(Exception e){
