@@ -5,12 +5,16 @@ Seccion: 30
 Nombre de archivo: Main.java 
 Descripcion: Clase principal del programa; clase que se compila para iniciar.
 */
+import java.io.*;
+import javax.swing.JOptionPane;
 public class Main {
+
     
     public static void main(String[] args) {
-        for(int i=0; i<200; i++){
-            int valorEntero = (int)Math.floor(Math.random()*9);
-        }
+        Numeros lista=new Numeros();
+        int cant=Integer.parseInt(JOptionPane.showInputDialog("¿Cuántos números desea generar?"));
+        lista.llenar(cant);
+        lista.fin();
     }
 
 }
