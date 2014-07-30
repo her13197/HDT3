@@ -51,7 +51,7 @@ public class MergeSort implements Sort{
      * @param high posiciÃ³n alta con la que se estÃ¡ trabajando.
      * @param list arreglo que se quiere ordenar.
      */
-    public static void merge (int low, int middle, int high, Comparable [] list){
+    public static Comparable[] merge (int low, int middle, int high, Comparable [] list){
         int largo=list.length;
         Comparable [] temp = new Comparable [list.length];
         // Copia las dos partes en el arreglo temporal
@@ -80,5 +80,6 @@ public class MergeSort implements Sort{
                 k++;
                 i++;
         }
+    return list;
     }   
 }

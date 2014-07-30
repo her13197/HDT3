@@ -11,7 +11,7 @@ public class Insertion implements Sort
    //  sort algorithm.
    //-----------------------------------------------------------------
     
-   public void Sort(Comparable[] list)
+   public static Comparable[] InsertionSort(Comparable[] list)
    {
       for (int index = 1; index < list.length; index++)
       {
@@ -27,5 +27,9 @@ public class Insertion implements Sort
             
          list[position] = key;
       }
-   }
+      return list;
+   }  
+    public void Sort(Comparable[] list) {
+        InsertionSort(list);
+    }
 }

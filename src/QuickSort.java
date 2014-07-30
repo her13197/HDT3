@@ -27,7 +27,7 @@ public class QuickSort implements Sort{
      * @param izquierda La posición de la izquierda
      * @param derecha La posición de la derecha
      */
-    public static void quickSort(Comparable[] list,int izquierda, int derecha){
+    public static Comparable[] quickSort(Comparable[] list,int izquierda, int derecha){
         //Verifica que las posiciones no sean las mismas
         if(izquierda>=derecha){}
         //Realiza el sort.
@@ -53,5 +53,6 @@ public class QuickSort implements Sort{
                 
             }
         }
+        return list;
     }
 }

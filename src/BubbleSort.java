@@ -1,6 +1,6 @@
 public class BubbleSort implements Sort{
 
-	public static void BubbleSort(Comparable[] lista){
+	public static Comparable[] BubbleSort(Comparable[] lista){
 		String cambio;
 		for(int i = lista.length-1; i >= 0; i--){
 			for(int j = 0; j<i; j++){
@@ -11,6 +11,7 @@ public class BubbleSort implements Sort{
 				}
 			}
 		}
+            return lista;
         }
 
     public void Sort(Comparable[] list) {
