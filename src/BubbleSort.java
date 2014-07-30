@@ -1,37 +1,19 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+public class BubbleSort implements Sort{
 
-/**
- *
- * @author Bicimotoca
- */
-public class BubbleSort<T extends Comparable<T>> {
-
-    private BubbleSort() {
-        
-    }
-    
-    public static <T extends Comparable<T>> T[] sort(T[] unsorted) {
-        boolean swapped = true;
-        int length = unsorted.length;
-        while (swapped) {
-            swapped = false;
-            for (int i = 1; i < length; i++) {
-                if (unsorted[i].compareTo(unsorted[i - 1]) < 0) {
-                    swap(i, i - 1, unsorted);
-                    swapped = true;
-                }
-            }
-            length--;
+	public static void BubbleSort(Comparable[] lista){
+		String cambio;
+		for(int i = lista.length-1; i >= 0; i--){
+			for(int j = 0; j<i; j++){
+				if((lista[j].compareTo(lista[j+1])) > 0)  {
+					cambio = (String) lista[j];
+					lista[j] = lista[j+1];
+					lista[j+1] = cambio;
+				}
+			}
+		}
         }
-        return unsorted;
-    }
 
-    private static <T extends Comparable<T>> void swap(int index1, int index2, T[] unsorted) {
-        T value = unsorted[index1];
-        unsorted[index1] = unsorted[index2];
-        unsorted[index2] = value;
+    public void Sort(Comparable[] list) {
+        BubbleSort(list);
     }
 }
