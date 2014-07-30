@@ -12,14 +12,14 @@ public class Main {
     
     public static void main(String[] args) {
         Numeros lista=new Numeros();
+        int cant=2000;
+        Sort ordenar=new QuickSort();
         
         /*Para generar numeros aleatorios y ordenarlos*/
-        int cant=2000;
         String[] list = new String[cant];
         lista.limpiar();
         lista.llenar(cant);
         list=lista.leerDatos(cant);
-        Sort ordenar=new QuickSort();
         ordenar.Sort(list);
         
         /*Para ordenar una lista ya definida */
