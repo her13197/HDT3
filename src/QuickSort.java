@@ -15,7 +15,7 @@ public class QuickSort {
      * post: El arreglo se ordena.
      * @param list El arreglo que se quiere ordenar.
      */
-    public static void quickSort(Comparable[] list){
+    public void quickSort(Comparable[] list){
         quickSort(list,0,list.length-1);
     }
     

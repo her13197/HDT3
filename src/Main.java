@@ -13,8 +13,11 @@ public class Main {
     public static void main(String[] args) {
         Numeros lista=new Numeros();
         int cant=Integer.parseInt(JOptionPane.showInputDialog("¿Cuántos números desea generar?"));
+        String[] list = new String[cant];
         lista.llenar(cant);
-        lista.fin();
+        list=lista.leerDatos(cant);
+        Insertion ordenar=new Insertion();
+        ordenar.Sort(list);
     }
 
 }

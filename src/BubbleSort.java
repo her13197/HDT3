@@ -10,8 +10,9 @@
 public class BubbleSort<T extends Comparable<T>> {
 
     private BubbleSort() {
+        
     }
-
+    
     public static <T extends Comparable<T>> T[] sort(T[] unsorted) {
         boolean swapped = true;
         int length = unsorted.length;

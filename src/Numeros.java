@@ -13,14 +13,17 @@ Nombre de archivo: Numeros.java
 Descripcion: clase Numeros que 
 */
 public class Numeros<E>{
-    File archivo = new File("C:\\Users\\usuario\\Desktop\\archivo.txt"); //Almacena el archivo en donde se guardaran los datos
+    File archivo = new File("C:\\Users\\usuario\\Desktop\\HDT3.txt"); //Almacena el archivo en donde se guardaran los datos
     java.io.File directorio = new File("C:\\Users\\usuario\\Desktop");
     public Numeros(){
 			if(!directorio.exists()){
 				directorio.mkdirs();
 			}
 			try{
-                            if(!archivo.exists()){
+                            if(archivo.exists()){
+                                archivo.delete();
+                                archivo.createNewFile();
+                            }else if(!archivo.exists()){
                                 archivo.createNewFile();
                             }
 			}
@@ -28,6 +31,7 @@ public class Numeros<E>{
 				e.printStackTrace();
 			}
 		}
+    
     public String[] leerDatos(int r){ //recibe la cantidad de numeros aleatorios generados
             FileReader fr = null;
             BufferedReader br = null;
@@ -39,17 +43,10 @@ public class Numeros<E>{
                     String linea;
                     while ((linea = br.readLine())!=null){
 
-                        datos[cont]=linea;
+                        datos[cont]=""+linea;
                         cont+=1;
                     }
-                    if(datos[1] == null){
-                        for(int i=0; i<10;i++){
-                            datos[i]=" ";
-                        }
-                        return datos;
-                    }
-
-
+                    return datos;
             }
             catch(Exception e){
                     e.printStackTrace();
@@ -100,6 +97,7 @@ public class Numeros<E>{
             System.out.println(e.getMessage());
 	}
     }
+    
     public void llenar(int cant){
         for(int i=0; i<cant; i++){
             int valorEntero = (int)Math.floor(Math.random()*9);

@@ -15,7 +15,7 @@ public class MergeSort{
      * post: El arreglo se ordena.
      * @param list El arreglo que se quiere ordenar.
      */
-    public static void mergeSort(Comparable [] list){
+    public void mergeSort(Comparable [] list){
         int largo = list.length;
         sort(0, largo-1, list);        
     }

@@ -10,7 +10,8 @@ public class Insertion
    //  Sorts the specified array of objects using the insertion
    //  sort algorithm.
    //-----------------------------------------------------------------
-   public static void Sort (Comparable[] list)
+    
+   public void Sort (Comparable[] list)
    {
       for (int index = 1; index < list.length; index++)
       {
