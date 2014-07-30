@@ -65,7 +65,7 @@ public class Numeros<E>{
             return datos;
     }
     
-    private void escribeDatos(int num){
+    public void escribeDatos(int num){
 			FileWriter fichero = null;
 			PrintWriter pw = null;
 			try{

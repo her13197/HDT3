@@ -17,7 +17,13 @@ public class Main {
         lista.llenar(cant);
         list=lista.leerDatos(cant);
         Insertion ordenar=new Insertion();
+        
+        String[] listOrd=new String[cant];
         ordenar.Sort(list);
+        Numeros ordenados=new Numeros();
+        for(int i=0;i<cant;i++){
+            ordenados.escribeDatos(Integer.parseInt(listOrd[i]));
+        }
     }
 
 }
