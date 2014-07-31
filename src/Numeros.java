@@ -5,16 +5,22 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
-/*
-Autor: Erick Hernandez    Carné: 13197
-Seccion: 21
+/**
+ * @author Erick Hernandez    Carné: 13197
+ * @author Pablo Argueta      Carné: 13028
+ * @author Erick Hernandez    Carné: 13217
+ * 
+ * Nombre de archivo: Numeros.java
+ * Descripcion: Clase que genera y guarda numeros.
+ */
 
-Nombre de archivo: Numeros.java 
-Descripcion: clase Numeros que 
-*/
 public class Numeros<E>{
     File archivo = new File("C:\\Users\\usuario\\Desktop\\HDT3.txt"); //Almacena el archivo en donde se guardaran los datos
     java.io.File directorio = new File("C:\\Users\\usuario\\Desktop");
+    /**
+     * Se crea el archivo y se guarda los numeros aleatorios
+     * Al estar ordenados por un sort ya solo se guarda el archivo
+     */
     public Numeros(){
 			if(!directorio.exists()){
 				directorio.mkdirs();
@@ -28,8 +34,12 @@ public class Numeros<E>{
 				e.printStackTrace();
 			}
 		}
-    
-    public String[] leerDatos(int r){ //recibe la cantidad de numeros aleatorios generados
+    /**
+     * 
+     * @param r recibe la cantidad de numeros aleatorios generados
+     * @return datos
+     */
+    public String[] leerDatos(int r){ 
             FileReader fr = null;
             BufferedReader br = null;
             String datos[]= new String[r];
@@ -83,6 +93,14 @@ public class Numeros<E>{
 				}
 			}
 		}
+    
+    public void llenarordenados(Comparable[] lista){
+        for(int i=0;i<lista.length;i++){
+            String n=(String)lista[i];
+            int w=Integer.parseInt(n);
+            escribeDatos(w);
+        }
+    }
     
     public void limpiar(){
         try{

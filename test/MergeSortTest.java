@@ -10,12 +10,13 @@ import static org.junit.Assert.*;
  * @author Pablo Argueta      Carné: 13028
  * @author Erick Hernandez    Carné: 13217
  * 
- * Nombre de archivo: QuickSortIT.java
- * Descripcion: Clase test que prueba los métodos de QuickSort.
+ * Nombre de archivo: MergeSortTest.java
+ * Descripcion: Clase test que prueba los métodos de MergeSort.
  */
-public class QuickSortIT {
+
+public class MergeSortTest {
     
-    public QuickSortIT() {
+    public MergeSortTest() {
     }
     
     @BeforeClass
@@ -35,16 +36,14 @@ public class QuickSortIT {
     }
 
     /**
-     * Test of quickSort method, of class QuickSort.
+     * Test of mergesort method, of class MergeSort.
      */
     @Test
-    public void testQuickSort() {
-        System.out.println("quickSort");
+    public void testMergesort() {
+        System.out.println("mergesort");
         Comparable[] list = {"b","a"};
         Comparable[] expResult = {"a","b"};
-        Comparable[] result = QuickSort.quickSort(list,0,list.length-1);
+        Comparable[] result = MergeSort.mergesort(list);
         assertArrayEquals(expResult, result);
-        
     }
-    
 }

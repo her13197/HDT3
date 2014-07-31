@@ -1,4 +1,20 @@
+/**
+ * @author Erick Hernandez    Carné: 13197
+ * @author Pablo Argueta      Carné: 13028
+ * @author Erick Hernandez    Carné: 13217
+ * 
+ * Nombre de archivo: BubbleSort.java
+ * Descripcion: Clase que ejecuta el sort Bubble sort para ordenar una secuencia de números aleatorios.
+ * Referencia del algoritmo en internet: Autor, Lewis/Loftus
+ */
+
 public class BubbleSort implements Sort{
+    /**
+     * pre: -
+     * post: El arreglo ordenado.
+     * @param lista
+     * Ordena la lista con el sort Bubble
+     */
 
 	public static Comparable[] BubbleSort(Comparable[] lista){
 		String cambio;
@@ -14,7 +30,7 @@ public class BubbleSort implements Sort{
             return lista;
         }
 
-    public void Sort(Comparable[] list) {
-        BubbleSort(list);
+    public Comparable[] Sort(Comparable[] list) {
+        return BubbleSort(list);
     }
 }

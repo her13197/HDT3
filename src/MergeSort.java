@@ -1,58 +1,57 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author Bicimotoca
+ * @author Erick Hernandez    Carné: 13197
+ * @author Pablo Argueta      Carné: 13028
+ * @author Erick Hernandez    Carné: 13217
+ * 
+ * Nombre de archivo: MergeSort.java
+ * Descripcion: Clase que ejecuta el sort Merge sort para ordenar una secuencia de números aleatorios.
+ * Referencia del algoritmo en internet: Autor, Sun Microsystems
  */
 public class MergeSort implements Sort{
     
     /**
-     * MÃ©todo que permite la utilizaciÃ³n de merge sort.
      * pre: -
-     * post: El arreglo se ordena.
-     * @param list El arreglo que se quiere ordenar.
+     * post: El arreglo ordenado.
+     * @param list
+     * Ordena la lista con el sort Merge.
      */
-    public void Sort(Comparable [] list){
-        mergesort(list);        
+    public Comparable[] Sort(Comparable [] list){
+        return mergesort(list);        
     }
     
-    public static void mergesort(Comparable[] list)
+    public static Comparable[] mergesort(Comparable[] list)
    {
        Comparable [ ] temp = new Comparable[ list.length ];
-       mergeSort( list, temp, 0, list.length - 1 );
+       return mergeSort( list, temp, 0, list.length - 1 );
        
        
    }
+    
   /**
-   * mergesort
-   *    Ordenamiento mediante de mezcla, tomado del 
-   *      autor Sun Microsystems.
-   * @param list un arreglo de tipo comparable.
-   * @param temp arreglo donde se coloca el arreglo unido.
-   * @param left El indice mas a la izquierda del sub arreglo.
-   * @param right El indice mas a la derecha del sub arreglo.
+   * @param list
+   * @param temp Arreglo unido.
+   * @param left El indice a la izquierda del sub arreglo.
+   * @param right El indice a la derecha del sub arreglo.
    */
-   private static void mergeSort( Comparable [ ] list, Comparable [ ] temp,
-            int left, int right ) {
+   private static Comparable[] mergeSort( Comparable [ ] list, Comparable [ ] temp, int left, int right ) {
         if( left < right ) 
         {
             int center = ( left + right ) / 2;
             mergeSort( list, temp, left, center );
             mergeSort( list, temp, center + 1, right );
-            merge( list, temp, left, center + 1, right );
+            return merge( list, temp, left, center + 1, right );
         }
+        Comparable [ ] listb={"a","b"};
+        return listb;
     }
    /**
     * Ordenamiento mediante de mezcla, tomado del 
     *      autor Sun Microsystems
-    * @param list un arreglo de tipo comparable.
-    * @param temp arreglo donde se coloca el arreglo unido.
-    * @param leftPos El Ã­ndice mÃ¡s a la izquierda del sub arreglo.
-    * @param rightPos El Ã­ndice del inicio de la segunda mitad.
-    * @param rightEnd el Ã­ndice mÃ¡s a la derecha de la subarreglo.
+    * @param list
+    * @param temp arreglo unido.
+    * @param leftPos El posición a la izquierda del sub arreglo.
+    * @param rightPos Indica la mitad superior arreglo.
+    * @param rightEnd El posición a la izquierda del sub arreglo.
     */
    private static Comparable [] merge( Comparable [ ] list, Comparable [ ] temp,
             int leftPos, int rightPos, int rightEnd ) {
@@ -60,22 +59,24 @@ public class MergeSort implements Sort{
         int tmpPos = leftPos;
         int numElements = rightEnd - leftPos + 1;
         
-        // Main loop
-        while( leftPos <= leftEnd && rightPos <= rightEnd )
-            if( list[ leftPos ].compareTo( list[ rightPos ] ) <= 0 )
+        while( leftPos <= leftEnd && rightPos <= rightEnd ){
+            if( list[ leftPos ].compareTo( list[ rightPos ] ) <= 0 ){
                 temp[ tmpPos++ ] = list[ leftPos++ ];
-            else
+            }else{
                 temp[ tmpPos++ ] = list[ rightPos++ ];
-        
-        while( leftPos <= leftEnd )    // Copy rest of first half
+            }
+        }
+        while( leftPos <= leftEnd ){
             temp[ tmpPos++ ] = list[ leftPos++ ];
+        }
         
-        while( rightPos <= rightEnd )  // Copy rest of right half
+        while( rightPos <= rightEnd ){ 
             temp[ tmpPos++ ] = list[ rightPos++ ];
+        }
         
-        // Copy tmpArray back
-        for( int i = 0; i < numElements; i++, rightEnd-- )
+        for( int i = 0; i < numElements; i++, rightEnd-- ){
             list[ rightEnd ] = temp[ rightEnd ];
+        }
         return list;
     }
 }

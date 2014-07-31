@@ -1,36 +1,29 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author Bicimotoca
+ * @author Erick Hernandez    Carné: 13197
+ * @author Pablo Argueta      Carné: 13028
+ * @author Erick Hernandez    Carné: 13217
+ * 
+ * Nombre de archivo: QuickSort.java
+ * Descripcion: Clase que ejecuta el sort Quick sort para ordenar una secuencia de números aleatorios.
+ * Referencia del algoritmo en internet: Autor, IntelliJ IDEA
  */
 public class QuickSort implements Sort{
     
     /**
-     * Método que permite la utilización de quick sort.
-     * pre: -
-     * post: El arreglo se ordena.
+     * post: El arreglo ordenado.
      * @param list El arreglo que se quiere ordenar.
      */
-    public void Sort(Comparable[] list){
-        quickSort(list,0,list.length-1);
+    public Comparable[] Sort(Comparable[] list){
+        return quickSort(list,0,list.length-1);
     }
     
     /**
-     * Método que permite la utilización de merge sort.
-     * pre: -
-     * post: El arreglo se ordena.
-     * @param list El arreglo que se quiere ordenar.
-     * @param izquierda La posición de la izquierda
-     * @param derecha La posición de la derecha
+     * @param list 
+     * @param izquierda Posición de la izquierda
+     * @param derecha Posición de la derecha
      */
     public static Comparable[] quickSort(Comparable[] list,int izquierda, int derecha){
-        //Verifica que las posiciones no sean las mismas
         if(izquierda>=derecha){}
-        //Realiza el sort.
         else if(izquierda!=derecha){
             int i=izquierda, d=derecha, pivote=i;
             Comparable aux;

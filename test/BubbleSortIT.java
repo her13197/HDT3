@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -12,9 +7,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author usuario
+ * @author Erick Hernandez    Carné: 13197
+ * @author Pablo Argueta      Carné: 13028
+ * @author Erick Hernandez    Carné: 13217
+ * 
+ * Nombre de archivo: BubbleSortIT.java
+ * Descripcion: Clase test que prueba los métodos de BubbleSort.
  */
+
 public class BubbleSortIT {
     
     public BubbleSortIT() {
@@ -42,25 +42,10 @@ public class BubbleSortIT {
     @Test
     public void testBubbleSort() {
         System.out.println("BubbleSort");
-        Comparable[] lista = null;
-        Comparable[] expResult = null;
+        Comparable[] lista = {"b","a"};
+        Comparable[] expResult = {"a","b"};
         Comparable[] result = BubbleSort.BubbleSort(lista);
         assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+       
     }
-
-    /**
-     * Test of Sort method, of class BubbleSort.
-     */
-    @Test
-    public void testSort() {
-        System.out.println("Sort");
-        Comparable[] list = null;
-        BubbleSort instance = new BubbleSort();
-        instance.Sort(list);
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
-    }
-    
 }

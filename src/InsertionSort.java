@@ -1,15 +1,21 @@
-//********************************************************************
-//  Sorting.java       Author: Lewis/Loftus
-//
-//  Demonstrates the selection sort and insertion sort algorithms.
-//********************************************************************
+/**
+ * @author Erick Hernandez    Carné: 13197
+ * @author Pablo Argueta      Carné: 13028
+ * @author Erick Hernandez    Carné: 13217
+ * 
+ * Nombre de archivo: InsertionSort.java
+ * Descripcion: Clase que ejecuta el sort Insertion sort para ordenar una secuencia de números aleatorios.
+ * Referencia del algoritmo en internet: Autor, Lewis/Loftus
+ */
 
 public class InsertionSort implements Sort
 {
-   //-----------------------------------------------------------------
-   //  Sorts the specified array of objects using the insertion
-   //  sort algorithm.
-   //-----------------------------------------------------------------
+    /**
+     * pre: -
+     * post: El arreglo ordenado.
+     * @param list
+     * Ordena la lista con el sort Insertion
+     */
     
    public static Comparable[] InsertionSort(Comparable[] list)
    {
@@ -18,7 +24,6 @@ public class InsertionSort implements Sort
          Comparable key = list[index];
          int position = index;
 
-         //  Shift larger values to the right
          while (position > 0 && key.compareTo(list[position-1]) < 0)
          {
             list[position] = list[position-1];
@@ -29,7 +34,7 @@ public class InsertionSort implements Sort
       }
       return list;
    }  
-    public void Sort(Comparable[] list) {
-        InsertionSort(list);
+    public Comparable[] Sort(Comparable[] list) {
+       return InsertionSort(list);
     }
 }
