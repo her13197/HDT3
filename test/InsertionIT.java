@@ -37,27 +37,27 @@ public class InsertionIT {
     }
 
     /**
-     * Test of InsertionSort method, of class Insertion.
+     * Test of InsertionSort method, of class InsertionSort.
      */
     @Test
     public void testInsertionSort() {
         System.out.println("InsertionSort");
         Comparable[] list = null;
         Comparable[] expResult = null;
-        Comparable[] result = Insertion.InsertionSort(list);
+        Comparable[] result = InsertionSort.InsertionSort(list);
         assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of Sort method, of class Insertion.
+     * Test of Sort method, of class InsertionSort.
      */
     @Test
     public void testSort() {
         System.out.println("Sort");
         Comparable[] list = null;
-        Insertion instance = new Insertion();
+        InsertionSort instance = new InsertionSort();
         instance.Sort(list);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

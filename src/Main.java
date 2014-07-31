@@ -12,8 +12,8 @@ public class Main {
     
     public static void main(String[] args) {
         Numeros lista=new Numeros();
-        int cant=2000;
-        Sort ordenar=new BubbleSort();
+        int cant=250;
+        Sort ordenar=new  MergeSort();
         
         /*Para generar numeros aleatorios y ordenarlos*/
         String[] list = new String[cant];

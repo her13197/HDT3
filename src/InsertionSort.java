@@ -4,7 +4,7 @@
 //  Demonstrates the selection sort and insertion sort algorithms.
 //********************************************************************
 
-public class Insertion implements Sort
+public class InsertionSort implements Sort
 {
    //-----------------------------------------------------------------
    //  Sorts the specified array of objects using the insertion
