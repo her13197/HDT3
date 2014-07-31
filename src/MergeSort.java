@@ -16,70 +16,66 @@ public class MergeSort implements Sort{
      * @param list El arreglo que se quiere ordenar.
      */
     public void Sort(Comparable [] list){
-        int largo = list.length;
-        sort(0, largo-1, list);        
+        mergesort(list);        
     }
     
-    /**
-     * MÃ©todo que permite realizar el sort.
-     * pre: low debe ser menor a high
-     * post: Se le realiza el sort al arreglo.
-     * @param low posiciÃ³n baja con la que se estÃ¡ trabajando.
-     * @param high posiciÃ³n alta con la que se estÃ¡ trabajando.
-     * @param list el arreglo que se quiere ordenar.
-     */
-    public static void sort (int low, int high, Comparable [] list){
-        // Revisa si low es menor a high, si no el array no se arregla
-	if (low < high) {
-            //Se obtiene el indice del elemento del centro
-            int middle = (low + high) / 2;
-            // Se realiza el sort del lado izquierdo del arreglo
-            sort(low, middle, list);
-            // Se realiza el sort del lado derecho del arreglo
-            sort(middle + 1, high, list);
-            // Se combinan los dos
-            merge(low, middle, high, list);
+    public static void mergesort(Comparable[] list)
+   {
+       Comparable [ ] temp = new Comparable[ list.length ];
+       mergeSort( list, temp, 0, list.length - 1 );
+       
+       
+   }
+  /**
+   * mergesort
+   *    Ordenamiento mediante de mezcla, tomado del 
+   *      autor Sun Microsystems.
+   * @param list un arreglo de tipo comparable.
+   * @param temp arreglo donde se coloca el arreglo unido.
+   * @param left El indice mas a la izquierda del sub arreglo.
+   * @param right El indice mas a la derecha del sub arreglo.
+   */
+   private static void mergeSort( Comparable [ ] list, Comparable [ ] temp,
+            int left, int right ) {
+        if( left < right ) 
+        {
+            int center = ( left + right ) / 2;
+            mergeSort( list, temp, left, center );
+            mergeSort( list, temp, center + 1, right );
+            merge( list, temp, left, center + 1, right );
         }
     }
-    
-    /**
-     * MÃ©todo encargado de combinar.
-     * pre: -
-     * post: Se combinan los arreglos.
-     * @param low posiciÃ³n baja con la que se estÃ¡ trabajando.
-     * @param middle posiciÃ³n media con la que se estÃ¡ trabajando.
-     * @param high posiciÃ³n alta con la que se estÃ¡ trabajando.
-     * @param list arreglo que se quiere ordenar.
-     */
-    public static Comparable[] merge (int low, int middle, int high, Comparable [] list){
-        int largo=list.length;
-        Comparable [] temp = new Comparable [list.length];
-        // Copia las dos partes en el arreglo temporal
-        for (int i = low; i <= high; i++) {
-                temp[i] = list[i];
-        }
-        int i = low;
-        int j = middle + 1;
-        int k = low;
-        //Copia los valores mas pequeÃ±os desde la parte derecha o izquierda de 
-        //regreso al original.
-        while (i <= middle && j <= high) {
-                if (temp[i].compareTo(temp[j]) <0) {
-                        list[k] = temp[i];
-                        i++;
-                } else {
-                        list[k] = temp[j];
-                        j++;
-                }
-                k++;
-        }
-        //Copia el resto del lado izquierdo del arreglo en el arreglo que se
-        //desea.
-        while (i <= middle) {
-                list[k] = temp[i];
-                k++;
-                i++;
-        }
-    return list;
-    }   
+   /**
+    * Ordenamiento mediante de mezcla, tomado del 
+    *      autor Sun Microsystems
+    * @param list un arreglo de tipo comparable.
+    * @param temp arreglo donde se coloca el arreglo unido.
+    * @param leftPos El Ã­ndice mÃ¡s a la izquierda del sub arreglo.
+    * @param rightPos El Ã­ndice del inicio de la segunda mitad.
+    * @param rightEnd el Ã­ndice mÃ¡s a la derecha de la subarreglo.
+    */
+   private static Comparable [] merge( Comparable [ ] list, Comparable [ ] temp,
+            int leftPos, int rightPos, int rightEnd ) {
+        int leftEnd = rightPos - 1;
+        int tmpPos = leftPos;
+        int numElements = rightEnd - leftPos + 1;
+        
+        // Main loop
+        while( leftPos <= leftEnd && rightPos <= rightEnd )
+            if( list[ leftPos ].compareTo( list[ rightPos ] ) <= 0 )
+                temp[ tmpPos++ ] = list[ leftPos++ ];
+            else
+                temp[ tmpPos++ ] = list[ rightPos++ ];
+        
+        while( leftPos <= leftEnd )    // Copy rest of first half
+            temp[ tmpPos++ ] = list[ leftPos++ ];
+        
+        while( rightPos <= rightEnd )  // Copy rest of right half
+            temp[ tmpPos++ ] = list[ rightPos++ ];
+        
+        // Copy tmpArray back
+        for( int i = 0; i < numElements; i++, rightEnd-- )
+            list[ rightEnd ] = temp[ rightEnd ];
+        return list;
+    }
 }
