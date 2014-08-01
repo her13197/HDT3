@@ -15,8 +15,8 @@ import java.io.PrintWriter;
  */
 
 public class Numeros<E>{
-    File archivo = new File("C:\\Users\\usuario\\Desktop\\HDT3.txt"); //Almacena el archivo en donde se guardaran los datos
-    java.io.File directorio = new File("C:\\Users\\usuario\\Desktop");
+    File archivo = new File("C:\\Users\\Bicimotoca\\Desktop\\HDT3.txt"); //Almacena el archivo en donde se guardaran los datos
+    java.io.File directorio = new File("C:\\Users\\Bicimotoca\\Desktop");
     /**
      * Se crea el archivo y se guarda los numeros aleatorios
      * Al estar ordenados por un sort ya solo se guarda el archivo

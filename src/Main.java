@@ -22,7 +22,7 @@ public class Main {
     public static void main(String[] args) {
         Numeros lista=new Numeros();
         int cant=2000;
-        Sort ordenar=new MergeSort();
+        Sort ordenar=new BubbleSort();
         boolean cont=true;
         Comparable[] listOrd1=new String[cant];
         Comparable[] listOrd2=new String[cant];
